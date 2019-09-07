@@ -1,0 +1,152 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: (36, 30, 41);
+    color: red;
+    height: 100%;
+    font-size: 12px;
+
+}
+
+.wrapper{
+    width: 100%;
+    margin: 0 auto;
+}
+.wrapper:after{
+    content: "";
+    display:table;
+    clear: both;
+}
+
+
+h1, {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 100%;
+    text-transform: uppercase;
+    margin: 5px 0;
+}
+
+p {
+    font-size: 1.6em;
+}
+
+#alphabet {
+    margin: 15px;
+    padding:0;
+    max-width: 900px;
+}
+
+#alphabet:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#alphabet li{
+    float: left;
+    margin: 0 10px 10px 0;
+    list-style: none;
+    width: 35px;
+    height: 30px;
+    padding-top: 10px;
+    background: white;
+    color: #006699;
+    font-size: 18px;
+    cursor: pointer;
+    -moz-border-raduis: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: solid 1px #fff; 
+}
+
+#alphabet li:hover {
+    background: green;
+    border: solid 1px #fff;
+    color: #fff;
+
+}
+#just-words {
+    margin: 0;
+    display: block;
+    padding: 0;
+    display: block;
+}
+
+#just-words li {
+    position: relative;
+    list-style: none;
+    margin:0;
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 1.6em
+}
+
+.active {
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    -moz-transition: all 1s ease-in;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    cursor: default;
+}
+.active:hover {
+    -moz-transition: all 1s ease-in;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3 ease-in-out;
+    opacity: 0.4;
+    -moz-transition: all 1s ease-in;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+
+}
+
+#yourlives {
+    font-size: 1.6em;
+    text-align: center;
+    display: block;
+}
+
+button {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -khtml-border-radius: 5px;
+    background: #fff;
+    color: #006699;
+    border: solid 1px #fff;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 2em;
+    padding: 18px 10px;
+    width: 180px;
+    margin: 10px;
+    outline: none;
+}
+
+button:hover {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-trasition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: pink;
+    border: solid 1px #fff;
+    color: black;
+}
+
+@media (max-width: 767px) {
+    #alphabet {
+        padding: 0 0 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #alphabet {
+        padding: 0 0 0 25px;
+    }
+}
+
+
+
+
+
+
+
+
