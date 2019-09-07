@@ -1,18 +1,19 @@
+var showLives = document.getElementById("yourlives");
+var showMovies = document.getElementById("movies");
 alphabet = function () {
-    var alphabet = ['a', 'b','c', 'd', 'e', 'f', 'g', 'j', 'i', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u','v', 'w', 'x', 'y', 'z'];
+    var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'j', 'i', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
     var movies;
-    var word ;
-    var guess ;
-    var guesses = [ ];
-    var lives ;
-    var counter ;
+    var word;
+    var guess;
+    var guesses = [];
+    var lives;
+    var counter;
     var space;
+    var correct;
 
-    var showLives = document.getElementById("yourlives");
-    var showMovies = document.getElementById("movies");
-    
-    var buttons = function {
+
+    function buttons() {
         myButtons = document.getElementById('buttons');
         letters = document.createElement('ul');
 
@@ -23,30 +24,30 @@ alphabet = function () {
             list.innerHTML = alphabet[i];
             check();
             myButtons.appendChild(letters);
-            
+
         }
 
     }
 
 }
 
-result = function() {
+result = function () {
     wordHolder = document.getElementById('hold');
     correct = document.createElement('ul');
 
     for (var i = 0; i < word.length; i++) {
         correct.setAttribute('id', 'my-word');
-        guess = doucment.createElement('li');
+        guess = document.createElement('li');
         guess.setAttribute('class', 'guess');
         if (word[i] === "-") {
             guess.innerHTML = "-";
-            space = 1;    
+            space = 1;
         }
         else {
             guess.innerHTML = "-";
         }
         guesses.push(guess);
-        wordHolder.appChild(correct);
+        wordHolder.appendChild(correct);
         correct.appendChild(guess);
     }
 }
@@ -63,14 +64,15 @@ comments = function () {
     }
 }
 
-check = function() {
-    list.onclick = function() {
+check = function () {
+    list.onclick = function () {
         var guess = (this.innerHTML);
+        console.log(guess);
         this.setAttribute("class");
         this.onclick = null;
-        for (var i =0, i < word.length; i++) {
+        for (var i = 0; i < word.length; i++) {
             if (word[i] === guess) {
-                guesses[i].innerHTML =guess;
+                guesses[i].innerHTML = guess;
                 counter += 1;
             }
         }
@@ -86,29 +88,29 @@ check = function() {
 
 }
 
-play = function (){
-    categories = [
-        ["The Lion King", "Clueless", "Hocus Pocus", "10 Things I Hate About You", "Finding Nemo", "Selena", "Now and Then", "Jurassic Park", "Titanic", "Matrix", "Goog WillHunting", "Con Air", "Men In Black"]
+play = function () {
+    movies = [
+        "The Lion King", "Clueless", "Hocus Pocus", "10 Things I Hate About You", "Finding Nemo", "Selena", "Now and Then", "Jurassic Park", "Titanic", "Matrix", "Goog WillHunting", "Con Air", "Men In Black"
     ];
-chosenCategory = categories[Math.floor(Math.random() * categories.length)];
-word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
-buttons();
+    word = movies[Math.floor(Math.random() * movies.length)];
+    console.log(word);
+    alphabet();
 
-guesses = [ ];
-lives = 10;
-counter = 0;
-space = 0;
-result();
-comments();
+    guesses = [];
+    lives = 10;
+    counter = 0;
+    space = 0;
+    result();
+    comments();
 
 
 }
 
-document.getElementById('reset').onclick = function() {
-    correct.parentNode.removeChild(correct);
-    letters.parentNode.removeChild(letters);
-    showClue.innerHMTL = "";
-    AudioContext.clearRect(0, 0, 400, 400);
+document.getElementById('reset').onclick = function () {
+    // correct.parentNode.removeChild(correct);
+    // letters.parentNode.removeChild(letters);
+    // showClue.innerHMTL = "";
+    // AudioContext.clearRect(0, 0, 400, 400);
     play();
 }
 
@@ -129,5 +131,5 @@ document.getElementById('reset').onclick = function() {
 
 
 
-    
- 
+
+
